@@ -1,0 +1,31 @@
+﻿<Window x:Class="File_Structure_Backup_Creator.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:File_Structure_Backup_Creator"
+        xmlns:gc="clr-namespace:GabrielControls;assembly=GabrielControls"
+        mc:Ignorable="d"
+        Title="File Structure Backup Creator" Height="130" Width="525" MinHeight="130" MaxHeight="130" MinWidth="230" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="3" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="5" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="5" />
+        </Grid.ColumnDefinitions>
+        <gc:TextBoxPlaceholder Text="{Binding MainWindowModel.sInput , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Placeholder="Diretório a ser copiado..." Grid.Column="1" Grid.Row="1"/>
+        <Button Content="..." Command="{Binding cmdPastaInput}" CommandParameter="{Binding}" Grid.Column="1" Grid.Row="1" Height="23" HorizontalAlignment="Right" Width="25" />
+        <gc:TextBoxPlaceholder Text="{Binding MainWindowModel.sOutput, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Placeholder="Diretório onde o backup será feito..." Grid.Column="1" Grid.Row="3"/>
+        <Button Content="..." Command="{Binding cmdPastaOutput}" CommandParameter="{Binding}" Grid.Column="1" Grid.Row="3" Height="23" HorizontalAlignment="Right" Width="25" />
+        <Button Content="Iniciar" Command="{Binding cmdIniciar}" CommandParameter="{Binding}" Grid.Column="1" Grid.Row="5" />
+    </Grid>
+</Window>
